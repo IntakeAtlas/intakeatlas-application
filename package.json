@@ -1,0 +1,31 @@
+{
+  "name": "intakeatlas-application",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "android": "expo start --android",
+
+    "web:export": "expo export --platform web",
+    "web:serve": "npx serve dist",
+
+    "native:start": "expo start",
+    "native:android": "expo run:android",
+    "native:ios": "expo run:ios",
+
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~55.0.8",
+    "expo-status-bar": "~55.0.4",
+    "react": "19.2.0",
+    "react-native": "0.83.2"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~5.9.2"
+  },
+  "private": true
+}
