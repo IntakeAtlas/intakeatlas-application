@@ -5,9 +5,14 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run web:export
+RUN npm run web:export \
+    && echo "--- /app ---" \
+    && ls -la /app \
+    && echo "--- /app/dist ---" \
+    && ls -la /app/dist \
+    && test -f /app/dist/index.html
 
 FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/. /usr/share/nginx/html/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
