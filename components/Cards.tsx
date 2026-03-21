@@ -2,23 +2,23 @@ import { Link } from 'expo-router';
 import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { intake, summary, theme } from '../data/mock';
 
-function flattenStyle(...styles: Array<StyleProp<ViewStyle>>): StyleProp<ViewStyle> {
+function flattenStyle(...styles: StyleProp<ViewStyle>[]): StyleProp<ViewStyle> {
   return StyleSheet.flatten(styles);
 }
 
 export function StreakCard() {
   return (
-    <View style={[styles.card, styles.softCard, { minHeight: 160 }]}> 
+    <View style={[styles.card, styles.softCard, { minHeight: 160 }]}>
       <Text style={styles.cardEyebrow}>CURRENT STREAK</Text>
       <Text style={styles.bigValue}>{summary.streakDays} Days</Text>
-      <Text style={styles.bodyCopy}>You're in the top 5% of protein-consistent users this week.</Text>
+      <Text style={styles.bodyCopy}>You&apos;re in the top 5% of protein-consistent users this week.</Text>
     </View>
   );
 }
 
 export function HydrationCard() {
   return (
-    <View style={[styles.card, styles.softCard, { minHeight: 160 }]}> 
+    <View style={[styles.card, styles.softCard, { minHeight: 160 }]}>
       <View style={styles.inlineRowBetween}>
         <Text style={styles.cardEyebrow}>HYDRATION FLOW</Text>
         <View style={styles.badge}><Text style={styles.badgeText}>75% TARGET</Text></View>
